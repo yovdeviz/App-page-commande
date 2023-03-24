@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>ControleVolet</title>
+        <link rel="stylesheet" href="pageweb.css" />
+        
+    </head>
+    
+    <body>
+        <h1>Bienvenue dans le panel de contrôle du volet automatisé</h1>
+        
+        <div id = "fond"> 
+            
+            <div id = "uno">
+                
+                <a href "#">OUVRIR</a>
+                <a href "#">FERMER</a>
+                
+            </div>
+            
+            <p>Régler le % d'ouverture:</p>
+           
+                
+    
+            <input id="Range" type="range" step="1" value="0" min="0" max="100" onchange="AfficheRange()">
+            <span id="AfficheValue">Valeur=0%</span>
+            
+            <script>
+                    function AfficheRange() {
+                        var pourcentage=document.getElementById("Range").value;
+                        document.getElementById("AfficheValue").innerHTML="Valeur="+pourcentage+"%";
+                        var envoyer = document.getElementById("envoyer");
+                        envoyer.href = "http://ADRESSE/ouvrir?val="+pourcentage;
+                    }
+            </script>
+            
+            <div>
+                <a id="envoyer" href ="http://ADRESSE/ouvrir?val=0">ENVOYER</a>
+            </div>
+                        
+        
+            <div id = "scenario">
+                <a href "#">SCENARIO 1</a>
+                <a href "#">SCENARIO 2</a>
+                <a href "#">SCENARIO 3</a>
+            </div>
+            
+  		    
+        </div>
+    </body>
+</html>
